@@ -1,204 +1,241 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-  
+
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .header {
-    background-image: url(../img/banner.jpg);
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    height: 673px;
-    background-repeat: no-repeat;
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: url(../img/banner3.jpg);
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  height: 673px;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Style the top navigation bar */
 .topnav {
-    width: 100%;
-    overflow: hidden;
-    background-color: transparent;
-    margin-top: -20px;
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  margin-top: -20px;
 }
-  
-  /* Style the topnav links */
-  .topnav a {
-    float: left;
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+
+.topnav2 {
+width: 100%;
+overflow: hidden;
+background-color: black;
 }
-  
-  /* Change color on hover */
-  .topnav a:hover {
-    background-color: transparent;
-    color: rgb(155, 151, 151);
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-  
-  /* Create three equal columns that floats next to each other */
+
+.topnav2 a {
+float: left;
+display: block;
+color: rgb(139, 139, 139);
+text-align: center;
+padding: 25px 16px;
+text-decoration: none;
+font-size: 25px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: transparent;
+  color: rgb(155, 151, 151);
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
   .column {
     width: 100%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-  
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width:600px) {
-    .column {
-      width: 100%;
-    }
-    .topnav {
-      width: 100%;
-      margin-left: -40px;
-    }
+  }
+  .topnav {
+    width: 100%;
+    margin-left: -40px;
+  }
 
-    .topnav a {
-      font-size: 12px;
-    }
+  .topnav a {
+    font-size: 12px;
+  }
 
-    .header {
-      width: 100%;
-      font-size: 15px;
-    }
+  .header {
+    width: 100%;
+    font-size: 15px;
+  }
 
-    .inici img {
-      margin-top: 100px;
-    }
+  .inici img {
+    margin-top: 100px;
+  }
 
-    .noticias img {
-      width: 250px;
-      height: 300px;
-      float: left;
-    }
+  .noticias img {
+    width: 250px;
+    height: 300px;
+    float: left;
+  }
 
-    .texto1 {
-      margin-left: 30px;
-    }
+  .texto1 {
+    margin-left: 30px;
+  }
 
-    footer p {
-      margin-left: 50px;
-    }
+  footer p {
+    margin-left: 50px;
+  }
 }
 
 h1{
-    padding: 20%;
-    font-size: 300%;
+  padding: 20%;
+  font-size: 300%;
 }
 
-.idioma {
-  margin-top: 18px;
+.selectpicker {
+margin-top: 30px;
+margin-left: 200px;
 }
 
 .contador {
-  background-color: turquoise;
-  margin-top: -32px;
-  height: 240px;
+background-color: turquoise;
+margin-top: -32px;
+height: 240px;
 }
 
 .inici {
-  background-color: blue;
+background-color: blue;
 }
 
 .inici img {
-  padding-top: 10px;
-  width: 37%;
-  border-radius: 4px;
-  margin-left: -70px;
-  float: left;
+padding-top: 10px;
+width: 37%;
+border-radius: 4px;
+margin-left: -70px;
+float: left;
 }
 
 .column h2, p {
-  padding-left: 40%;
+padding-left: 40%;
 }
 
 .column h2 {
-  padding-top: 40px;
+padding-top: 40px;
 }
 
 .column h3 {
-  margin-top: 80px;
-  text-align: center;
-  font-size: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+margin-top: 80px;
+text-align: center;
+font-size: 20px;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .noticias img {
-  width: 250px;
-  height: 300px;
-  float: left;
-  margin-left: 55px;
-  margin-bottom: 10px;
-  margin-top: -35px;
+width: 250px;
+height: 300px;
+float: left;
+margin-left: 55px;
+margin-bottom: 10px;
+margin-top: -35px;
 }
 
 .noticias:hover img {
-  opacity: 0.7;
+opacity: 0.7;
 }
 
 .texto1, .texto2, .texto3 {
-  margin-top: -20px;
-  position: absolute;
-  font-size: 20px;
-  color: white;
+margin-top: -20px;
+position: absolute;
+font-size: 20px;
+color: white;
 }
 
 .texto1 {
-  left: 20%;
+left: 20%;
 }
 
 .texto2 {
-  left: 43%;
+left: 43%;
 }
 
 .texto3 {
-  left: 65%;
+left: 65%;
 }
 
 footer {
-  text-align: center;
-  padding: 3px;
-  background-color: #5C5C5C;
-  color: white;
+text-align: center;
+padding: 3px;
+background-color: #5C5C5C;
+color: white;
 }
 
 footer p {
-  text-align: center;
-  margin-left: -530px;
+text-align: center;
+margin-left: -530px;
 }
 
 .clasificaciones {
-  background-image: url(../img/banner2.png);
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 165px;
-  margin-top: 80px;
+background-image: url(../img/banner2.jpg);
+background-repeat: no-repeat;
+width: 100%;
+height: 230px;
+margin-top: 80px;
+background-size: cover;
 }
 
 .clasificaciones h2{
-  color: black;
-  font-family: Arial, sans-serif;
-  font-size: 3em;
-  font-weight: bold;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  margin-left: 80px;
+color: black;
+font-family: Arial, sans-serif;
+font-size: 3em;
+font-weight: bold;
+display: inline-block;
+margin-left: 80px;
+margin-top: 80px;
 }
+
+.formulario h2{
+font-family: 'Courier New', Courier, monospace;
+width: 100%;
+}
+
+.formulario {
+text-align: center;
+padding-bottom: 50px;
+padding-top: 30px;
+
+}
+
+input[type=text], input[type=number], input[type=date], input[type=email], input[type=submit], select {
+padding: 5px 20px;
+margin: 8px 0;
+}
+
 
 
 

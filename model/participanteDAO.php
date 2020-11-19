@@ -40,8 +40,8 @@ class ParticipanteDAO{
         $sentencia1->bindParam(9,$id_inscr);
         $sentencia1->bindParam(10,$num_dorsal);
         $sentencia1->execute();
-        header("Location: ../view/inscripcions.php");
         $pdo->commit();
+	    header("Location: ../view/inscripcions.php");
         } catch (Exception $ex) {
             /* Reconocer un error y no hacer los cambios */
             $pdo->rollback();

@@ -1,5 +1,4 @@
 <?php
-// Creamos la clase Reserva que contiene todos los atributos de la base de datos
 class Participante {
     private $DNI_part;
     private $nom_part;
