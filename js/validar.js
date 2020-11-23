@@ -129,7 +129,6 @@ function validarDNI1() {
 
 function validarFor() {
     var inputs = document.getElementsByClassName('validar');
-    var dni = document.getElementById('DNI_part');
     for (let i = 0; i < inputs.length; i++) {
         if ((inputs[i].type == 'text' || inputs[i].type == 'date' || inputs[i].type == 'email') && inputs[i].value == '') {
             inputs[i].style.borderColor='red';
