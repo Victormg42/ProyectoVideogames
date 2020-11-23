@@ -25,7 +25,7 @@
     <div class="formulario">
     <h2>RELLENA EL FORMULARIO PARA INSCRIBIRTE</h2>
     <form action="../view/inscripcions.php" method="POST" onsubmit="return validarFor()">
-        <input type="text" style="width: 20.5%;" class="validar" id="DNI_part" name="DNI_part" placeholder="Doble click para validar DNI..." ondblclick="return validarDNI()">
+        <input type="text" style="width: 20.5%;" id="DNI_part" name="DNI_part" placeholder="Doble click para validar DNI...">
         <input type="text" style="width: 20.5%;" class="validar" id="nom_part" name="nom_part" placeholder="Nombre..."><br>
         <input type="text" style="width: 20.5%;" class="validar" id="apellido_part" name="apellido_part" placeholder="Primer apellido...">
         <input type="text" style="width: 20.5%;" class="validar" id="apellido2_part" name="apellido2_part" placeholder="Segundo apellido..."><br>

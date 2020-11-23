@@ -1,3 +1,6 @@
+window.onload = function(){
+    document.getElementById('DNI_part').addEventListener("focusout", validarDNI1);
+}
 function validacionForm() {
     // variables 
     var email=document.getElementById('email_part').value;
@@ -82,7 +85,6 @@ function validarDNI() {
     var semaforoNIE=false;
     var soloNum="";
     if (iden.length==9) {
-        
     //pregunto si el primer caracter es una letra
     if((isNaN(parseInt(iden.substr(0,1))))) {
         if ("XYZ".indexOf(iden.substr(0,1))!=-1) {
@@ -115,15 +117,27 @@ function validarDNI() {
         }
 }
 
+function validarDNI1() {
+    var dni = document.getElementById('DNI_part');
+    if (dni.value.length == 9) {
+        //console.log('DNI válido');
+        dni.style.border = "solid green 5px";
+    } else {
+        dni.style.border = "solid red 5px";
+    }
+}
+
 function validarFor() {
     var inputs = document.getElementsByClassName('validar');
+    var dni = document.getElementById('DNI_part');
     for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].type == 'text' && inputs[i].value == '') {
+        if ((inputs[i].type == 'text' || inputs[i].type == 'date' || inputs[i].type == 'email') && inputs[i].value == '') {
             inputs[i].style.borderColor='red';
-        } else if (inputs[i].type == 'text' && inputs[i].value !== '') {
+        } else if ((inputs[i].type == 'text' || inputs[i].type == 'date' || inputs[i].type == 'email') && inputs[i].value !== '') {
             inputs[i].style.borderColor='white';
         }
-        console.log(inputs[i].type);
+        validarDNI1();
+        //console.log(inputs[i].type);
     }
     return false;
 }
