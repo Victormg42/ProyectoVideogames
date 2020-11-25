@@ -1,5 +1,6 @@
 window.onload = function(){
     document.getElementById('DNI_part').addEventListener("focusout", validarDNI1);
+    document.getElementById('fecha_nac').addEventListener("focusout", categoria);
 }
 function validacionForm() {
     // variables 
@@ -139,4 +140,26 @@ function validarFor() {
         //console.log(inputs[i].type);
     }
     return false;
+}
+
+/* Mostrar categoría a partir de la fecha de nacimiento */
+function categoria() {
+    var nacimiento = document.getElementById('fecha_nac').value;
+    var nac = new Date(nacimiento);
+    var msg = document.getElementById('rango_edad');
+    var fecha = new Date();
+    var categoria = fecha.getFullYear() - nac.getFullYear();
+    console.log(categoria);
+    // si la fecha de nacimiento es inferior a 30 de nov. 2020 va a indicarnos que somos viejos
+    if (categoria > 0 && categoria <= 17) {
+        msg.innerHTML = '0-17';
+    } else if (categoria >= 18 && categoria <= 30) {
+        msg.innerHTML = '18-30';
+    } else if (categoria >= 31 && categoria <= 50) {
+        msg.innerHTML = '31-50';
+    } else if (categoria >= 51 && categoria <= 70) {
+        msg.innerHTML = '51-70';
+    } else {
+        msg.innerHTML = '71 o mas';
+    }
 }

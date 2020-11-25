@@ -36,15 +36,16 @@
             <option value="Mujer">Mujer</option>
             <option value="Desconocido">Desconocido</option>
         </select><br>
-        <select style="width: 41%;" type="text" id="rango_edad" name="rango_edad">
+        <!--<select style="width: 41%;" type="text" id="rango_edad" name="rango_edad">
             <option value="0-17">0-17</option>
             <option value="18-30">18-30</option>
             <option value="31-50">31-50</option>
             <option value="51-70">51-70</option>
             <option value="71 o mas">71 o mas</option>
-        </select><br>
+        </select><br>-->
+        <div id="rango_edad" name="rango_edad"></div>
         <div id="message"></div><br>
-        <input style="width: 41%" type="submit" value="Inscribir" name="submit">
+        <input style="width: 41%" type="submit" value="Inscribir" name="submit" id="submit">
 </form>
 </div>
     <?php
