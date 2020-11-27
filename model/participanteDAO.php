@@ -27,7 +27,7 @@ class ParticipanteDAO{
         $apellido2=$_POST['apellido2_part'];
         $email=$_POST['email_part'];
         $sexo=$_POST['sexo_part']; 
-        $edad=$_POST['rango_edad'];
+        $edad=$_POST['edad'];
         $fecha_nac=$_POST['fecha_nac']; 
         $sentencia1->bindParam(1,$DNI);
         $sentencia1->bindParam(2,$nombre);
@@ -46,8 +46,8 @@ class ParticipanteDAO{
             /* Reconocer un error y no hacer los cambios */
             $pdo->rollback();
             echo $ex->getMessage();
-            //header("Location: ../view/inscripcions.php");
+            header("Location: ../view/inscripcions.php");
           }
-    }          
+    }
 }
 ?>

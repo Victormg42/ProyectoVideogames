@@ -1,5 +1,6 @@
 window.onload = function(){
     document.getElementById('DNI_part').addEventListener("focusout", validarDNI1);
+    document.getElementById('DNI_part').addEventListener("focusout", validarDNI);
     document.getElementById('fecha_nac').addEventListener("focusout", categoria);
 }
 function validacionForm() {
@@ -83,6 +84,7 @@ function validacionForm() {
 function validarDNI() {
     var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
     var iden = document.getElementById("DNI_part").value;
+    var error = document.getElementById("errores");
     var semaforoNIE=false;
     var soloNum="";
     if (iden.length==9) {
@@ -93,73 +95,83 @@ function validarDNI() {
             var soloNum = "XYZ".indexOf(iden.substr(0,1))+iden.substr(1,7);
             semaforoNIE=true;
         } else {
-            alert("El NIE no es válido , la primera letra ha de ser X, Y o Z");
+            error.innerHTML = "El NIE no es válido , la primera letra ha de ser X, Y o Z";
         }
     } else {
         semaforoNIE=true;
         soloNum=iden.substr(0,8);
     }
-    
-    
-    
     if (semaforoNIE) {
         if((isNaN(parseInt(iden.substr(-1,1))))) {
             if (letras[soloNum%23]===iden.substr(-1,1)) {  
-                alert("NIF/NIE correcto"); 
+                error.innerHTML = "NIF/NIE correcto"; 
             } else {
-                alert("La letra final del NIF esta mal");
+                error.innerHTML = "La letra final del NIF esta mal";
             }
         } else {
-            alert("error debe acabar con letra");
-            }   
-        }
-    } else {
-        alert("Introduce el DNI en el campo correspondiente");
-        }
+            error.innerHTML = "Debe acabar con letra";
+        } 
+    } else if (iden.value == '') {
+        return false;
+    }
 }
-
+}
 function validarDNI1() {
     var dni = document.getElementById('DNI_part');
     if (dni.value.length == 9) {
         //console.log('DNI válido');
         dni.style.border = "solid green 5px";
+        return true;
     } else {
         dni.style.border = "solid red 5px";
+        return false;
     }
 }
 
 function validarFor() {
     var inputs = document.getElementsByClassName('validar');
+    var val = true;
     for (let i = 0; i < inputs.length; i++) {
         if ((inputs[i].type == 'text' || inputs[i].type == 'date' || inputs[i].type == 'email') && inputs[i].value == '') {
             inputs[i].style.borderColor='red';
+            val = false;
         } else if ((inputs[i].type == 'text' || inputs[i].type == 'date' || inputs[i].type == 'email') && inputs[i].value !== '') {
             inputs[i].style.borderColor='white';
-        }
-        validarDNI1();
-        //console.log(inputs[i].type);
+        } 
     }
-    return false;
+    if (validarDNI1() && val) {
+        return true;
+    } else {
+        return false;
+    }
+    
 }
-
 /* Mostrar categoría a partir de la fecha de nacimiento */
 function categoria() {
     var nacimiento = document.getElementById('fecha_nac').value;
     var nac = new Date(nacimiento);
     var msg = document.getElementById('rango_edad');
+    var e = document.getElementById('edad');
     var fecha = new Date();
     var categoria = fecha.getFullYear() - nac.getFullYear();
     console.log(categoria);
     // si la fecha de nacimiento es inferior a 30 de nov. 2020 va a indicarnos que somos viejos
     if (categoria > 0 && categoria <= 17) {
-        msg.innerHTML = '0-17';
+        msg.innerHTML = 'Se va a inscribir a la categoria 0-17 años';
+        e.value = '0-17';
     } else if (categoria >= 18 && categoria <= 30) {
-        msg.innerHTML = '18-30';
+        msg.innerHTML = 'Se va a inscribir a la categoria 18-30 años';
+        e.value = '18-30';
     } else if (categoria >= 31 && categoria <= 50) {
-        msg.innerHTML = '31-50';
+        msg.innerHTML = 'Se va a inscribir a la categoria 31-50 años';
+        e.value = '31-50';
     } else if (categoria >= 51 && categoria <= 70) {
-        msg.innerHTML = '51-70';
+        msg.innerHTML = 'Se va a inscribir a la categoria 51-70 años';
+        e.value = '51-70';
+    } else if (categoria >= 71) {
+        msg.innerHTML = 'Se va a inscribir a la categoria 71 o mas años';
+        e.value = '71 o mas';
     } else {
-        msg.innerHTML = '71 o mas';
+        msg.innerHTML = 'Fechas no coinciden, introduza su fecha de nacimiento correcta';
     }
 }
