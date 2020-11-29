@@ -106,7 +106,7 @@ function validarDNI() {
             if (letras[soloNum%23]===iden.substr(-1,1)) {  
                 error.innerHTML = "NIF/NIE correcto"; 
             } else {
-                error.innerHTML = "La letra final del NIF esta mal";
+                error.innerHTML = "DNI de 9 caracteres, pero la letra final es incorrecta";
             }
         } else {
             error.innerHTML = "Debe acabar con letra";
